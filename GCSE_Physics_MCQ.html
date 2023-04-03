@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <head>
+    <title>Revisionline</title>
+    <style>
+       /* Define styles for the header and footer */
+       header {
+         background-color: grey;
+         color: teal;
+         padding: 10px;
+         text-align: center;
+         font-family: 'Open Sans', sans-serif;
+         padding-left: 15px;
+       }
+       footer {
+         background-color: grey;
+         color: lightblue;
+         padding: 10px;
+         text-align: center;
+         font-family: 'Open Sans', sans-serif;
+         padding-left: 15px;
+       }
+
+       /* Define styles for the menu buttons */
+       .menu-button {
+         background-color: grey;
+         color: lightblue;
+         padding: 10px 20px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         margin-right: 0px;
+         font-family: 'Open Sans', sans-serif;
+         list-style-type: none;
+         position: relative;
+}
+       .menu-button ul {
+         display: none;
+         position: absolute;
+         top: 100%;
+         left: 0;
+         margin: 0;
+         padding: 0;
+         background-color: grey;
+         z-index: 1;
+       }
+       .menu-button:hover ul {
+         display: inline-block;
+       }
+       .menu-button li {
+         margin: 0;
+         padding: 5px;
+         list-style-type: none;
+       }
+
+       /* Define styles for the main content */
+       .main-content {
+         background-color: white;
+         padding: 0px;
+         text-align: left;
+         font-family: 'Open Sans', sans-serif;
+       }
+       body {
+           font-size: 18px;
+           line-height: 1.5;
+       }
+       .contact-button {
+         display: inline-block;
+         padding: 10px 20px;
+         font-size: 18px;
+         font-weight: bold;
+         text-decoration: none;
+         color: white;
+         background-color: teal;
+         border-radius: 5px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+       }
+
+   .container {
+     width: 80%;
+     max-width: 800px;
+     margin: 0 auto;
+     text-align: center;
+   }
+
+   h1 {
+     margin-top: 30px;
+     margin-bottom: 50px;
+   }
+
+   #timer {
+     font-size: 20px;
+     margin-bottom: 20px;
+   }
+
+   #question {
+     font-size: 25px;
+     margin-bottom: 30px;
+   }
+
+   #choices {
+     display: inline-block;
+     text-align: left;
+   }
+
+   #choices label {
+     display: block;
+     margin-bottom: 10px;
+     cursor: pointer;
+   }
+
+   #submit {
+     display: block;
+     margin: 30px auto;
+     padding: 10px 20px;
+     font-size: 20px;
+     font-weight: bold;
+     text-align: center;
+     color: #ffffff;
+     background-color: #0077cc;
+     border-radius: 5px;
+     border: none;
+     cursor: pointer;
+   }
+
+   #submit:hover {
+     background-color: #005580;
+   }
+
+   #score {
+     font-size: 30px;
+     margin-top: 50px;
+   }
+
+     </style>
+  </head>
+  <body>
+    <header>
+   <img src="logo.png">
+   <div>
+     <ul>
+      <li class="menu-button">
+     <a href="index.html" class="menu-button">Home</a>
+     <li class="menu-button">
+       Physics
+       <ul>
+         <li><a href="GCSE_Physics.html">GCSE Physics</a></li>
+         <li><a href="Alevel_Physics.html">A level Physics</a></li>
+       </ul>
+     </li>
+     <li class="menu-button">
+       Chemistry
+       <ul>
+         <li><a href="GCSE_Chem.html">GCSE Chemistry</a></li>
+         <li><a href="Alevel_Chem.html">A level Chemistry</a></li>
+       </ul>
+     </li>
+     <li class="menu-button">
+       Maths
+       <ul>
+         <li><a href="mathsmatrix.revisionline.co.uk">Maths</a></li>
+       </ul>
+     <li class="menu-button">
+       Biology
+       <ul>
+         <li><a href="GCSE_bio.html">GCSE Biology</a></li>
+         <li><a href="Alevel_bio.html">A level Biology</a></li>
+       </ul>
+     </li>
+
+    <div class="main-content">
+      <div class="container">
+    <h1> GCSE Physics Revision: Multiple Choice Quiz</h1>
+       <div id="timer">Time Remaining: <span id="time"></span> seconds</div>
+       <div id="question"></div>
+       <div id="choices"></div>
+       <button id="submit" >Submit Answer</button>
+       <div id="score"></div>
+     </div>
+     <script src="gcse_physics.js"></script>
+
+</div>
+</body>
+<footer> © 2023 Revisionline, All rights reserved.&nbsp;&nbsp;&nbsp;<a href="mailto:info@revisionline.co.uk" class="contact-button">E- mail</a></footer></html>
