@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <head>
+    <title>Revisionline</title>
+    <style>
+       /* Define styles for the header and footer */
+       header {
+         background-color: grey;
+         color: teal;
+         padding: 10px;
+         text-align: center;
+         font-family: 'Open Sans', sans-serif;
+         padding-left: 15px;
+       }
+       footer {
+         background-color: grey;
+         color: lightblue;
+         padding: 10px;
+         text-align: center;
+         font-family: 'Open Sans', sans-serif;
+         padding-left: 15px;
+       }
+
+       /* Define styles for the menu buttons */
+       .menu-button {
+         background-color: grey;
+         color: lightblue;
+         padding: 10px 20px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         margin-right: 0px;
+         font-family: 'Open Sans', sans-serif;
+         list-style-type: none;
+         position: relative;
+         display: inline-flex;
+         align-items: center;
+}
+       .menu-button ul {
+         display: none;
+         position: absolute;
+         top: 100%;
+         left: 0;
+         margin: 0;
+         padding: 0;
+         background-color: grey;
+         z-index: 1;
+       }
+       .menu-button:hover ul {
+         display: inline-block;
+       }
+       .menu-button li {
+         margin: 0;
+         padding: 5px;
+         list-style-type: none;
+       }
+
+       /* Define styles for the main content */
+       .main-content {
+         background-color: white;
+         padding: 0px;
+         text-align: center;
+         font-family: 'Open Sans', sans-serif;
+       }
+       body {
+           font-size: 18px;
+           line-height: 1.5;
+       }
+       .contact-button {
+         display: inline-block;
+         padding: 10px 20px;
+         font-size: 18px;
+         font-weight: bold;
+         text-decoration: none;
+         color: white;
+         background-color: teal;
+         border-radius: 5px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+       }
+       #flashcard {
+        border: 1px solid black;
+        text-align: center;
+        padding: 40px 20px 20px 20px !important;
+        margin: 20px;
+        width: 600px;
+        height: 400px;
+        text-align: center;
+        font-size: 18px;
+        margin: 0 auto;
+       background-color: lightblue;
+      }
+      .next-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+     </style>
+  </head>
+  <body>
+    <header>
+   <img src="logo.png">
+   <div>
+     <ul>
+      <li class="menu-button">
+     <a href="index.html" class="menu-button">Home</a>
+     <li class="menu-button">
+         Physics
+         <ul>
+           <li><a href="GCSE_Physics.html">GCSE Physics</a></li>
+           <li><a href="Alevel_Physics.html">A level Physics</a></li>
+         </ul>
+       </li>
+       <li class="menu-button">
+         Chemistry
+         <ul>
+           <li><a href="GCSE_Chem.html">GCSE Chemistry</a></li>
+           <li><a href="Alevel_Chem.html">A level Chemistry</a></li>
+         </ul>
+       </li>
+       <li class="menu-button">
+         Maths
+         <ul>
+           <li><a href="mathsmatrix.revisionline.co.uk">Maths</a></li>
+         </ul>
+       <li class="menu-button">
+         Biology
+         <ul>
+           <li><a href="GCSE_bio.html">GCSE Biology</a></li>
+           <li><a href="Alevel_bio.html">A level Biology</a></li>
+         </ul>
+       </li>
+    <div class="main-content">
+        <h1> GCSE Physics Revision: Flashcards </h1>
+    <div id="flashcard">
+           <div id="question"></div>
+           <div id="answer" style="display: none;"></div>
+         </div>
+         <button id="next-button" onclick="showNext()">Next</button>
+
+         <script>
+         const flashcards = [
+           {
+             question: "What is the equation for kinetic energy?",
+             answer: "KE = 0.5 x m x v^2"
+           },
+           {
+             question: "What is the equation for gravitational potential energy?",
+             answer: "GPE = mgh"
+           },
+           {
+             question: "What is Ohm's Law?",
+             answer: "V = IR"
+           },
+           {
+             question: "What is the formula for pressure?",
+             answer: "P = F/A"
+           },
+           {
+             question: "What is the unit for power?",
+             answer: "Watt (W)"
+           },
+           {
+             question: "What is the formula for efficiency?",
+             answer: "Efficiency = (useful energy output / total energy input) x 100%"
+           },
+           {
+             question: "What is the difference between mass and weight?",
+             answer: "Mass is the amount of matter in an object, whereas weight is the force exerted on an object due to gravity."
+           },
+           {
+             question: "What is the principle of moments?",
+             answer: "The principle of moments states that for an object in equilibrium, the sum of the clockwise moments about any point must be equal to the sum of the anticlockwise moments about the same point."
+           },
+           {
+           question: "What is the relationship between force, mass, and acceleration?",
+           answer: "Force = mass x acceleration"
+         },
+         {
+           question: "What is the equation for momentum?",
+           answer: "p = mv"
+         },
+         {
+           question: "What is the difference between speed and velocity?",
+           answer: "Speed is the distance traveled per unit time, whereas velocity is the displacement per unit time (i.e., speed in a specific direction)."
+         },
+         {
+           question: "What is the formula for acceleration?",
+           answer: "a = (v - u) / t"
+         },
+         {
+           question: "What is the difference between a scalar quantity and a vector quantity?",
+           answer: "A scalar quantity has only magnitude (e.g., speed), whereas a vector quantity has both magnitude and direction (e.g., velocity)."
+         },
+         {
+           question: "What is the difference between elastic and inelastic collisions?",
+           answer: "In an elastic collision, both momentum and kinetic energy are conserved, whereas in an inelastic collision, only momentum is conserved."
+         },
+         {
+           question: "What is the law of conservation of energy?",
+           answer: "The law of conservation of energy states that energy cannot be created or destroyed, only transferred or transformed from one form to another."
+         },
+         {
+           question: "What is the difference between a conductor and an insulator?",
+           answer: "A conductor is a material that allows electricity to flow through it easily, whereas an insulator is a material that resists the flow of electricity."
+         },
+         {
+           question: "What is the formula for voltage?",
+           answer: "V = IR"
+         },
+         {
+           question: "What is the difference between direct current (DC) and alternating current (AC)?",
+           answer: "DC flows in only one direction, whereas AC alternates in direction."
+         },
+         {
+           question: "What is the difference between a series circuit and a parallel circuit?",
+           answer: "In a series circuit, the components are connected in a line, whereas in a parallel circuit, the components are connected across multiple branches."
+         },
+         {
+           question: "What is the difference between a concave lens and a convex lens?",
+           answer: "A concave lens is thinner in the middle than at the edges and diverges light rays, whereas a convex lens is thicker in the middle than at the edges and converges light rays."
+         },
+         {
+           question: "What is the difference between reflection and refraction?",
+           answer: "Reflection is the bouncing back of light rays from a surface, whereas refraction is the bending of light rays as they pass through a medium with a different refractive index."
+         },
+         {
+           question: "What is the difference between radio waves and microwaves?",
+           answer: "Radio waves have longer wavelengths and lower frequencies than microwaves."
+         },
+         {
+           question: "What is the difference between a primary color and a secondary color?",
+           answer: "A primary color is a color that cannot be produced by mixing other colors, whereas a secondary color is a color produced by mixing two primary colors."
+         },
+         {
+           question: "What is the difference between longitudinal waves and transverse waves?",
+           answer: "In longitudinal waves, the vibration is in the same direction as the wave propagation, whereas in transverse waves, the vibration is perpendicular to the wave propagation."
+         },
+         {
+           question: "What is the difference between a simple pendulum and a compound pendulum?",
+           answer: "A simple pendulum consists of a mass (bob) suspended from a fixed point by a string, whereas a compound pendulum consists of a rigid body suspended from a fixed point and oscillating about a pivot point."
+         },
+         {
+         question: "What is the difference between nuclear fission and nuclear fusion?",
+         answer: "Nuclear fission is the process of splitting a heavy nucleus into lighter nuclei, whereas nuclear fusion is the process of combining two lighter nuclei into a heavier nucleus."
+         },
+         {
+         question: "What is the difference between a magnetic field and an electric field?",
+         answer: "A magnetic field is produced by moving charges or magnets and exerts a force on moving charges, whereas an electric field is produced by stationary charges and exerts a force on other charges."
+         },
+         {
+         question: "What is the difference between a thermistor and an LDR?",
+         answer: "A thermistor is a resistor that changes resistance with temperature, whereas an LDR is a resistor that changes resistance with light intensity."
+         },
+         {
+         question: "What is the difference between a converging lens and a diverging lens?",
+         answer: "A converging lens is thicker in the middle than at the edges and converges light rays, whereas a diverging lens is thinner in the middle than at the edges and diverges light rays."
+         },
+         {
+         question: "What is the difference between a stationary wave and a progressive wave?",
+         answer: "In a stationary wave, the wave appears to be standing still and does not propagate through space, whereas in a progressive wave, the wave propagates through space."
+         },
+         {
+         question: "What is the difference between a step-up transformer and a step-down transformer?",
+         answer: "A step-up transformer increases the voltage from the primary to the secondary coil, whereas a step-down transformer decreases the voltage from the primary to the secondary coil."
+         },
+         {
+         question: "What is the difference between a cathode ray tube (CRT) and a liquid crystal display (LCD)?",
+         answer: "A CRT uses a beam of electrons to create an image on a phosphorescent screen, whereas an LCD uses a backlight and liquid crystals to create an image."
+         },
+         {
+         question: "What is the difference between a geostationary satellite and a polar satellite?",
+         answer: "A geostationary satellite orbits the Earth at the same rate as the Earth's rotation and stays above the same point on the equator, whereas a polar satellite orbits the Earth from north to south (or vice versa) and passes over the poles."
+         }
+         ];
+
+           let currentFlashcardIndex = 0;
+           const flashcardElement = document.getElementById("flashcard");
+           const questionElement = document.getElementById("question");
+           const answerElement = document.getElementById("answer");
+
+           function showNext() {
+             currentFlashcardIndex++;
+             if (currentFlashcardIndex >= flashcards.length) {
+               currentFlashcardIndex = 0;
+             }
+             questionElement.innerText = flashcards[currentFlashcardIndex].question;
+             answerElement.innerText = flashcards[currentFlashcardIndex].answer;
+             answerElement.style.display = "none";
+           }
+
+           flashcardElement.addEventListener("click", function() {
+             answerElement.style.display = "block";
+           });
+
+           showNext();
+         </script>
+       </body>
+<footer> © 2023 Revisionline, All rights reserved.&nbsp;&nbsp;&nbsp;<a href="mailto:info@revisionline.co.uk" class="contact-button">E- mail</a></footer>
+</html>
