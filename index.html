@@ -23,64 +23,81 @@
        }
 
        /* Define styles for the menu buttons */
-       .menu-button {
-         background-color: grey;
-         color: lightblue;
-         padding: 10px 20px;
-         text-align: center;
-         text-decoration: none;
-         display: inline-block;
-         margin-right: 0px;
-         font-family: 'Open Sans', sans-serif;
-         list-style-type: none;
-         position: relative;
-         display: inline-flex;
-         align-items: center;
+      .menu-button {
+  background-color: grey;
+  color: lightblue;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 0px;
+  font-family: 'Open Sans', sans-serif;
+  list-style-type: none;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
 }
-       .menu-button ul {
-         display: none;
-         position: absolute;
-         top: 100%;
-         left: 0;
-         margin: 0;
-         padding: 0;
-         background-color: grey;
-         z-index: 1;
-       }
-       .menu-button:hover ul {
-         display: inline-block;
-       }
-       .menu-button li {
-         margin: 0;
-         padding: 5px;
-         list-style-type: none;
-       }
+.menu-button ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: grey;
+  z-index: 1;
+}
+.menu-button:hover ul,
+.menu-button:focus-within ul {
+  display: inline-block;
+}
+.menu-button li {
+  margin: 0;
+  padding: 5px;
+  list-style-type: none;
+}
 
-       /* Define styles for the main content */
-       .main-content {
-         background-color: white;
-         padding: 0px;
-         text-align: center;
-         font-family: 'Open Sans', sans-serif;
-       }
-       body {
-           font-size: 18px;
-           line-height: 1.5;
-           margin: 0;
-           padding: 0;
-       }
-       .contact-button {
-         display: inline-block;
-         padding: 10px 20px;
-         font-size: 18px;
-         font-weight: bold;
-         text-decoration: none;
-         color: white;
-         background-color: teal;
-         border-radius: 5px;
-         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-       }
+/* Define styles for the main content */
+.main-content {
+  background-color: white;
+  padding: 0px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+.contact-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  background-color: teal;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
+@media (hover: hover) {
+  /* Code for cursor hover devices */
+  .menu-button:hover ul,
+  .contact-button:hover {
+    display: inline-block;
+  }
+}
+
+@media (hover: none) {
+  /* Code for touchscreen devices */
+  .menu-button:hover ul,
+  .menu-button:focus-within ul,
+  .contact-button:focus {
+    display: inline-block;
+  }
+}
      </style>
   </head>
   <body>
