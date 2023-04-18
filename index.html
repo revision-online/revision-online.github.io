@@ -3,27 +3,26 @@
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
   <head>
     <title>Revisionline</title>
-    <style>
-       /* Define styles for the header and footer */
-       header {
-         background-color: grey;
-         color: teal;
-         padding: 10px;
-         text-align: center;
-         font-family: 'Open Sans', sans-serif;
-         padding-left: 15px;
-       }
-       footer {
-         background-color: grey;
-         color: lightblue;
-         padding: 10px;
-         text-align: center;
-         font-family: 'Open Sans', sans-serif;
-         padding-left: 15px;
-       }
+header {
+  background-color: grey;
+  color: teal;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding-left: 15px;
+}
 
-       /* Define styles for the menu buttons */
-      .menu-button {
+footer {
+  background-color: grey;
+  color: lightblue;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding-left: 15px;
+}
+
+/* Define styles for the menu buttons */
+.menu-button {
   background-color: grey;
   color: lightblue;
   padding: 10px 20px;
@@ -64,12 +63,14 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
 body {
   font-size: 18px;
   line-height: 1.5;
   margin: 0;
   padding: 0;
 }
+
 .contact-button {
   display: inline-block;
   padding: 10px 20px;
@@ -82,23 +83,58 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-@media (hover: hover) {
-  /* Code for cursor hover devices */
-  .menu-button:hover ul,
-  .contact-button:hover {
-    display: inline-block;
+/* Define media queries for responsive design */
+@media only screen and (max-width: 600px) {
+  /* Define styles for small screens */
+  header {
+    font-size: 20px;
+    padding: 5px;
+  }
+  
+  footer {
+    font-size: 20px;
+    padding: 5px;
+  }
+  
+  .menu-button {
+    padding: 5px;
+  }
+  
+  .menu-button li {
+    padding: 2px;
+  }
+  
+  .contact-button {
+    font-size: 16px;
+    padding: 5px 10px;
   }
 }
 
-@media (hover: none) {
-  /* Code for touchscreen devices */
-  .menu-button:hover ul,
-  .menu-button:focus-within ul,
-  .contact-button:focus {
-    display: inline-block;
+@media only screen and (min-width: 601px) {
+  /* Define styles for medium and large screens */
+  header {
+    font-size: 30px;
+    padding: 10px;
+  }
+  
+  footer {
+    font-size: 30px;
+    padding: 10px;
+  }
+  
+  .menu-button {
+    padding: 10px 20px;
+  }
+  
+  .menu-button li {
+    padding: 5px;
+  }
+  
+  .contact-button {
+    font-size: 18px;
+    padding: 10px 20px;
   }
 }
-     </style>
   </head>
   <body>
     <header>
