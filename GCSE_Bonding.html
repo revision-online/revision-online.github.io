@@ -1,170 +1,192 @@
 <!DOCTYPE html>
-<html>
-  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-  <head>
-    <title>Revisionline</title>
-    <style>
-       /* Define styles for the header and footer */
-       header {
-         background-color: grey;
-         color: teal;
-         padding: 10px;
-         text-align: center;
-         font-family: 'Open Sans', sans-serif;
-         padding-left: 15px;
-       }
-       footer {
-         background-color: grey;
-         color: lightblue;
-         padding: 10px;
-         text-align: center;
-         font-family: 'Open Sans', sans-serif;
-         padding-left: 15px;
-       }
+ <html>
+   <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+   <head>
+     <title>Revisionline</title>
+     <style>
+        /* Define styles for the header and footer */
+        header {
+          background-color: grey;
+          color: teal;
+          padding: 10px;
+          text-align: center;
+          font-family: 'Open Sans', sans-serif;
+          padding-left: 15px;
+        }
+        footer {
+          background-color: grey;
+          color: lightblue;
+          padding: 10px;
+          text-align: center;
+          font-family: 'Open Sans', sans-serif;
+          padding-left: 15px;
+        }
 
-       /* Define styles for the menu buttons */
-  .menu-button {
-  background-color: white;
-  color: lightblue;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin-right: 0px;
-  font-family: 'Open Sans', sans-serif;
-  list-style-type: none;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
+        /* Define styles for the menu buttons */
+        .menu-button {
+          background-color: grey;
+          color: lightblue;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin-right: 0px;
+          font-family: 'Open Sans', sans-serif;
+          list-style-type: none;
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+ }
+        .@media (max-width: 767px) {
+  .menu-button:hover ul {
+    display: none;
+  }
+  .menu-button ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: grey;
+    z-index: 1;
+  }
+  .menu-button.show-dropdown ul {
+    display: block;
+  }
+}
+.menu-button.show-dropdown ul {
+    display: block;
+  }
+}
+  
+.menu-button:focus-within {
+  --background-color: lightgrey;
+  --text-color: white;
+  outline: none;
 }
 
-.menu-button ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  z-index: 1;
+.menu-button:focus-within .menu-button {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-.menu-button:hover ul,
-.menu-button:focus ul {
-  display: inline-block;
+.menu-button:focus-within ul {
+  display: block;
 }
+.menu-button:hover ul {
+          display: inline-block;
+        }
+        .menu-button li {
+          margin: 0;
+          padding: 5px;
+          list-style-type: none;
+        }
 
-.menu-button li {
-  margin: 0;
-  padding: 5px;
-  list-style-type: none;
-}
+        /* Define styles for the main content */
+        .main-content {
+          background-color: white;
+          padding: 0px;
+          text-align: left;
+          font-family: 'Open Sans', sans-serif;
+        }
+        body {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+        .contact-button {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 18px;
+          font-weight: bold;
+          text-decoration: none;
+          color: white;
+          background-color: teal;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-
-       /* Define styles for the main content */
-       .main-content {
-         background-color: white;
-         padding: 0px;
-         text-align: left;
-         font-family: 'Open Sans', sans-serif;
-       }
-       body {
-           font-size: 18px;
-           line-height: 1.5;
-           margin: 0;
-           padding: 0;
-       }
-       .contact-button {
-         display: inline-block;
-         padding: 10px 20px;
-         font-size: 18px;
-         font-weight: bold;
-         text-decoration: none;
-         color: white;
-         background-color: teal;
-         border-radius: 5px;
-         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-       }
-
-     </style>
-  </head>
-  <body>
-    <header>
-   <img src="logo.png">
-   <div>
-     <ul>
+      </style>
+   </head>
+   <body>
+     <header>
+    <img src="logo.png">
+    <div>
+      <ul>
+       <li class="menu-button">
+      <a href="index.html" class="menu-button">Home</a>
       <li class="menu-button">
-     <a href="index.html" class="menu-button">Home</a>
-     <li class="menu-button">
-         Physics
-         <ul>
-           <li><a href="GCSE_Physics.html">GCSE Physics</a></li>
-           <li><a href="Alevel_Physics.html">A level Physics</a></li>
-         </ul>
-       </li>
-       <li class="menu-button">
-         Chemistry
-         <ul>
-           <li><a href="GCSE_Chem.html">GCSE Chemistry</a></li>
-           <li><a href="Alevel_Chem.html">A level Chemistry</a></li>
-         </ul>
-       </li>
-       <li class="menu-button">
-         Maths
-         <ul>
-           <li><a href="mathsmatrix.revisionline.co.uk">Maths</a></li>
-         </ul>
-       <li class="menu-button">
-         Biology
-         <ul>
-           <li><a href="GCSE_bio.html">GCSE Biology</a></li>
-           <li><a href="Alevel_bio.html">A level Biology</a></li>
-         </ul>
-       </li>
-    <div class="main-content">
-      <h1> GCSE Chemistry Revision: Bonding notes</h1>
-  <h2>Introduction to Bonding</h2>
-<p>Bonding is the process of joining two or more atoms together to form a molecule or a compound. There are four main types of bonding in chemistry: ionic bonding, simple covalent (molecular) bonding, giant covalent bonding, and metallic bonding.</p>
-<h2>Ionic Bonding</h2>
-<p>Ionic bonding occurs between a metal and a non-metal. In ionic bonding, electrons are transferred from the metal to the non-metal to form ions. The metal becomes positively charged, while the non-metal becomes negatively charged. The ions then attract each other to form an ionic compound.</p>
-<p>Some properties of ionic compounds include:</p>
-<ul>
-    <li>They have high melting and boiling points</li>
-    <li>They are brittle and break easily</li>
-    <li>They conduct electricity when molten or in solution</li>
-</ul>
-<h2>Molecular Bonding</h2>
-<p>Molecular bonding occurs between non-metals. In molecular bonding, atoms share electrons to form molecules. The atoms in a molecule are held together by covalent bonds.</p>
-<p>Some properties of molecular compounds include:</p>
-<ul>
-    <li>They have low melting and boiling points</li>
-    <li>They are usually gases or liquids at room temperature</li>
-    <li>They do not conduct electricity</li>
-</ul>
-<h2>Giant Covalent Bonding</h2>
-<p>Giant covalent bonding occurs between non-metals. In giant covalent bonding, atoms are joined together by strong covalent bonds to form a giant lattice structure.</p>
-<p>Some examples of giant covalent structures include:</p>
-<ul>
-    <li>Diamond</li>
-    <li>Graphite</li>
-    <li>Silicon dioxide</li>
-</ul>
-<p>Some properties of giant covalent structures include:</p>
-<ul>
-    <li>They have high melting and boiling points</li>
-    <li>They are very hard and difficult to break</li>
-    <li>They do not conduct electricity (except for graphite)</li>
-</ul>
-<h2>Metallic Bonding</h2>
-<p>Metallic bonding occurs between metals. In metallic bonding, the metal atoms are held together by a sea of delocalized electrons, which are free to move throughout the lattice.</p>
-<p>Some properties of metallic compounds include:</p>
-<ul>
-    <li>They have high melting and boiling points</li>
-    <li>They are malleable and ductile</li>
-    <li>They conduct electricity and heat well</li>
-</ul>
-</ul>
-</div>
-</body>
-<footer> © 2023 Revisionline, All rights reserved.&nbsp;&nbsp;&nbsp;<a href="mailto:info@revisionline.co.uk" class="contact-button">E- mail</a></footer>
-</html>
+          Physics
+          <ul>
+            <li><a href="GCSE_Physics.html">GCSE Physics</a></li>
+            <li><a href="Alevel_Physics.html">A level Physics</a></li>
+          </ul>
+        </li>
+        <li class="menu-button">
+          Chemistry
+          <ul>
+            <li><a href="GCSE_Chem.html">GCSE Chemistry</a></li>
+            <li><a href="Alevel_Chem.html">A level Chemistry</a></li>
+          </ul>
+        </li>
+        <li class="menu-button">
+          Maths
+          <ul>
+            <li><a href="mathsmatrix.revisionline.co.uk">Maths</a></li>
+          </ul>
+        <li class="menu-button">
+          Biology
+          <ul>
+            <li><a href="GCSE_bio.html">GCSE Biology</a></li>
+            <li><a href="Alevel_bio.html">A level Biology</a></li>
+          </ul>
+        </li>
+     <div class="main-content">
+       <h1> GCSE Chemistry Revision: Bonding notes</h1>
+   <h2>Introduction to Bonding</h2>
+ <p>Bonding is the process of joining two or more atoms together to form a molecule or a compound. There are four main types of bonding in chemistry: ionic bonding, simple covalent (molecular) bonding, giant covalent bonding, and metallic bonding.</p>
+ <h2>Ionic Bonding</h2>
+ <p>Ionic bonding occurs between a metal and a non-metal. In ionic bonding, electrons are transferred from the metal to the non-metal to form ions. The metal becomes positively charged, while the non-metal becomes negatively charged. The ions then attract each other to form an ionic compound.</p>
+ <p>Some properties of ionic compounds include:</p>
+ <ul>
+     <li>They have high melting and boiling points</li>
+     <li>They are brittle and break easily</li>
+     <li>They conduct electricity when molten or in solution</li>
+ </ul>
+ <h2>Molecular Bonding</h2>
+ <p>Molecular bonding occurs between non-metals. In molecular bonding, atoms share electrons to form molecules. The atoms in a molecule are held together by covalent bonds.</p>
+ <p>Some properties of molecular compounds include:</p>
+ <ul>
+     <li>They have low melting and boiling points</li>
+     <li>They are usually gases or liquids at room temperature</li>
+     <li>They do not conduct electricity</li>
+ </ul>
+ <h2>Giant Covalent Bonding</h2>
+ <p>Giant covalent bonding occurs between non-metals. In giant covalent bonding, atoms are joined together by strong covalent bonds to form a giant lattice structure.</p>
+ <p>Some examples of giant covalent structures include:</p>
+ <ul>
+     <li>Diamond</li>
+     <li>Graphite</li>
+     <li>Silicon dioxide</li>
+ </ul>
+ <p>Some properties of giant covalent structures include:</p>
+ <ul>
+     <li>They have high melting and boiling points</li>
+     <li>They are very hard and difficult to break</li>
+     <li>They do not conduct electricity (except for graphite)</li>
+ </ul>
+ <h2>Metallic Bonding</h2>
+ <p>Metallic bonding occurs between metals. In metallic bonding, the metal atoms are held together by a sea of delocalized electrons, which are free to move throughout the lattice.</p>
+ <p>Some properties of metallic compounds include:</p>
+ <ul>
+     <li>They have high melting and boiling points</li>
+     <li>They are malleable and ductile</li>
+     <li>They conduct electricity and heat well</li>
+ </ul>
+ </ul>
+ </div>
+ </body>
+ <footer> © 2023 Revisionline, All rights reserved.&nbsp;&nbsp;&nbsp;<a href="mailto:info@revisionline.co.uk" class="contact-button">E- mail</a></footer>
+ </html>
