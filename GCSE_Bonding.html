@@ -37,24 +37,52 @@
          display: inline-flex;
          align-items: center;
 }
-       .menu-button ul {
-         display: none;
-         position: absolute;
-         top: 100%;
-         left: 0;
-         margin: 0;
-         padding: 0;
-         background-color: grey;
-         z-index: 1;
-       }
-       .menu-button:hover ul {
-         display: inline-block;
-       }
-       .menu-button li {
-         margin: 0;
-         padding: 5px;
-         list-style-type: none;
-       }
+  /* For touchscreens */
+@media (max-width: 767px) {
+  .menu-button ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    z-index: 1;
+  }
+  .menu-button:hover ul {
+    display: none;
+  }
+  .menu-button li {
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
+  }
+  .menu-button:focus-within ul {
+    display: inline-block;
+  }
+}
+
+/* For devices with cursor */
+@media (min-width: 768px) {
+  .menu-button ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    z-index: 1;
+  }
+  .menu-button:hover ul {
+    display: inline-block;
+  }
+  .menu-button li {
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
+  }
+}
 
        /* Define styles for the main content */
        .main-content {
