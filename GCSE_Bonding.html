@@ -37,44 +37,17 @@
           display: inline-flex;
           align-items: center;
  }
-        .@media (max-width: 767px) {
-  .menu-button:hover ul {
-    display: none;
-  }
-  .menu-button ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    background-color: grey;
-    z-index: 1;
-  }
-  .menu-button.show-dropdown ul {
-    display: block;
-  }
-}
-.menu-button.show-dropdown ul {
-    display: block;
-  }
-}
-  
-.menu-button:focus-within {
-  --background-color: lightgrey;
-  --text-color: white;
-  outline: none;
-}
-
-.menu-button:focus-within .menu-button {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-.menu-button:focus-within ul {
-  display: block;
-}
-.menu-button:hover ul {
+        .menu-button ul {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          margin: 0;
+          padding: 0;
+          background-color: grey;
+          z-index: 1;
+        }
+        .menu-button:hover ul {
           display: inline-block;
         }
         .menu-button li {
@@ -110,6 +83,22 @@
 
       </style>
    </head>
+   <script>
+  var menuButtons = document.querySelectorAll('.menu-button');
+
+  // Add touch event listener to each menu button
+  menuButtons.forEach(function(button) {
+    button.addEventListener('touchstart', function() {
+      // Show the dropdown menu on touch tap
+      if (button.querySelector('ul').style.display === 'none') {
+        button.querySelector('ul').style.display = 'inline-block';
+      } else {
+        button.querySelector('ul').style.display = 'none';
+      }
+    });
+  });
+</script>
+
    <body>
      <header>
     <img src="logo.png">
