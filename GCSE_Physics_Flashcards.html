@@ -145,8 +145,8 @@
            <div id="question"></div>
            <div id="answer" style="display: none;"></div>
          </div>
-         <button id="next-button" onclick="showNext()">Next</button>
-      <button id="back-button">Back</button>
+         <button id="back-button">Back</button>
+      <button id="next-button" onclick="showNext()">Next</button>
          <script>
          const flashcards = [
            {
@@ -289,31 +289,56 @@ const questionElement = document.getElementById("question");
 const answerElement = document.getElementById("answer");
 
 function showNext() {
-currentFlashcardIndex++;
-if (currentFlashcardIndex >= flashcards.length) {
-  currentFlashcardIndex = 0;
-}
-questionElement.innerText = flashcards[currentFlashcardIndex].question;
-answerElement.innerText = flashcards[currentFlashcardIndex].answer;
-answerElement.style.display = "none";
+  currentFlashcardIndex++;
+  if (currentFlashcardIndex >= flashcards.length) {
+    currentFlashcardIndex = 0;
+  }
+  questionElement.innerText = flashcards[currentFlashcardIndex].question;
+  answerElement.innerText = flashcards[currentFlashcardIndex].answer;
+  answerElement.style.display = "none";
 }
 
 function showPrevious() {
-currentFlashcardIndex--;
-if (currentFlashcardIndex < 0) {
-  currentFlashcardIndex = flashcards.length - 1;
+  currentFlashcardIndex--;
+  if (currentFlashcardIndex < 0) {
+    currentFlashcardIndex = flashcards.length - 1;
+  }
+  questionElement.innerText = flashcards[currentFlashcardIndex].question;
+  answerElement.innerText = flashcards[currentFlashcardIndex].answer;
+  answerElement.style.display = "none";
 }
-questionElement.innerText = flashcards[currentFlashcardIndex].question;
-answerElement.innerText = flashcards[currentFlashcardIndex].answer;
-answerElement.style.display = "none";
+
+function showRandom() {
+  const randomIndex = Math.floor(Math.random() * flashcards.length);
+  questionElement.innerText = flashcards[randomIndex].question;
+  answerElement.innerText = flashcards[randomIndex].answer;
+  answerElement.style.display = "none";
 }
 
 flashcardElement.addEventListener("click", function() {
-answerElement.style.display = "block";
+  answerElement.style.display = "block";
 });
 
 const backButtonElement = document.getElementById("back-button");
 backButtonElement.addEventListener("click", showPrevious);
+
+const nextButtonElement = document.getElementById("next-button");
+nextButtonElement.addEventListener("click", showNext);
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "ArrowLeft") {
+    showPrevious();
+  } else if (event.key === "ArrowRight") {
+    showNext();
+  }
+});
+
+const shuffleButtonElement = document.createElement("button");
+shuffleButtonElement.innerText = "Shuffle";
+shuffleButtonElement.addEventListener("click", showRandom);
+
+const mainContentElement = document.querySelector(".main-content");
+mainContentElement.appendChild(shuffleButtonElement);
 
 showNext();
          </script>
