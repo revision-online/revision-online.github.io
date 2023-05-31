@@ -286,7 +286,7 @@
          }
          ];
 
-           let currentFlashcardIndex = 0;
+let currentFlashcardIndex = 0;
 const flashcardElement = document.getElementById("flashcard");
 const questionElement = document.getElementById("question");
 const answerElement = document.getElementById("answer");
@@ -333,6 +333,8 @@ document.addEventListener("keydown", function(event) {
     showPrevious();
   } else if (event.key === "ArrowRight") {
     showNext();
+  } else if (event.key === " ") { // Added event listener for spacebar
+    answerElement.style.display = "block";
   }
 });
 
