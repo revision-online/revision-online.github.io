@@ -163,12 +163,14 @@ function checkAnswer() {
 
   function showScore() {
   var scoreElem = document.getElementById("score");
-  scoreElem.innerHTML = "Final Score: " + score + " out of " + questions.length;
+  var percentage = (score / questions.length) * 100;
+  scoreElem.innerHTML = "Final Score: " + score + " out of " + questions.length + " (" + percentage + "%)";
   var choicesElem = document.getElementById("choices");
   choicesElem.style.display = "none";
   var submitElem = document.getElementById("submit");
   submitElem.style.display = "none";
-  }
+}
+
 
   function startTimer() {
   var timeElem = document.getElementById("time");
