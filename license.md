@@ -1,6 +1,6 @@
 LICENSE
 
-revision-online.github.io. (revisionline.co.uk) is a website owned and operated by Naa'il Khokhar ("The Owner"). This license agreement (license.md) governs the use of Revisionline.co.uk ("Website") by you ("User").
+revision-online.github.io is a website owned and operated by Naa'il Khokhar ("The Owner"). This license agreement (license.md) governs the use of ("Website") by you ("User").
 
 COPYRIGHT
 The Owner retains all rights, title, and interest in and to the Website, including all intellectual property rights. Unauthorized copying, distribution, or commercial use of any part of the Website without the prior written consent of the Owner is strictly prohibited.
